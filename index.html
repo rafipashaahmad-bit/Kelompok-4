@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FutureLab | Menjelajahi Masa Depan Melalui Ilmu & Teknologi</title>
+
+<style>
+
+/* ================= RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary: #5b21b6;
+    --secondary: #7c3aed;
+    --accent: #06b6d4;
+    --bg: #f7f5ff;
+    --card: #ffffff;
+    --text: #242033;
+    --muted: #756f88;
+    --border: #e6e1f2;
+    --white: #ffffff;
+}
+
+body.dark {
+    --bg: #11101b;
+    --card: #1b1928;
+    --text: #f5f3ff;
+    --muted: #aaa5b9;
+    --border: #332e45;
+    --white: #1b1928;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    transition: 0.3s;
+}
+
+
+/* ================= NAVBAR ================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    max-width: 1180px;
+    margin: auto;
+    height: 72px;
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.nav-menu a:hover {
+    color: var(--secondary);
+}
+
+.theme-btn {
+    border: none;
+    background: var(--primary);
+    color: white;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    max-width: 1180px;
+    margin: auto;
+    min-height: 570px;
+    padding: 80px 20px;
+
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.badge {
+    display: inline-block;
+    background: #ede9fe;
+    color: var(--primary);
+    padding: 8px 14px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 54px;
+    line-height: 1.08;
+    color: var(--text);
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--secondary);
+}
+
+.hero p {
+    color: var(--muted);
+    max-width: 600px;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+.explore-btn {
+    display: inline-block;
+    text-decoration: none;
+    background: var(--primary);
+    color: white;
+    padding: 13px 22px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.explore-btn:hover {
+    background: var(--secondary);
+}
+
+.info-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    padding: 12px 22px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* ================= FUTURE VISUAL ================= */
+
+.future-visual {
+    position: relative;
+    height: 350px;
+    border-radius: 35px;
+    background:
+        linear-gradient(135deg, #4c1d95, #7c3aed, #0891b2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.future-visual::before {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border: 2px solid rgba(255,255,255,0.35);
+    border-radius: 50%;
+}
+
+.future-visual::after {
+    content: "";
+    position: absolute;
+    width: 330px;
+    height: 120px;
+    border: 2px solid rgba(255,255,255,0.25);
+    border-radius: 50%;
+    transform: rotate(-25deg);
+}
+
+.future-icon {
+    font-size: 110px;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ================= GENERAL SECTION ================= */
+
+section {
+    max-width: 1180px;
+    margin: auto;
+    padding: 75px 20px;
+}
+
+.section-head {
+    margin-bottom: 35px;
+}
+
+.section-head h2 {
+    font-size: 32px;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+
+.section-head p {
+    color: var(--muted);
+}
+
+
+/* ================= TOPIC ================= */
+
+.topic-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.topic {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 28px 20px;
+    transition: 0.3s;
+}
+
+.topic:hover {
+    transform: translateY(-6px);
+    border-color: var(--secondary);
+}
+
+.topic-icon {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.topic h3 {
+    margin-bottom: 8px;
+}
+
+.topic p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+
+/* ================= SEARCH ================= */
+
+.search-area {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 25px;
+    border-radius: 18px;
+    margin-bottom: 30px;
+}
+
+.search-area input {
+    width: 100%;
+    padding: 15px 18px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    outline: none;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 14px;
+}
+
+
+/* ================= FILTER ================= */
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-bottom: 28px;
+}
+
+.filters button {
+    padding: 9px 17px;
+    border-radius: 25px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    cursor: pointer;
+}
+
+.filters button:hover,
+.filters button.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+
+/* ================= ARTICLES ================= */
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.article {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.article:hover {
+    transform: translateY(-5px);
+}
+
+.article-top {
+    height: 175px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ede9fe, #cffafe);
+    font-size: 70px;
+}
+
+.article-body {
+    padding: 22px;
+}
+
+.tag {
+    display: inline-block;
+    background: #ede9fe;
+    color: var(--primary);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.article h3 {
+    color: var(--text);
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.article p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 16px;
+}
+
+.read {
+    border: none;
+    background: none;
+    color: var(--primary);
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+
+/* ================= HIGHLIGHT ================= */
+
+.highlight {
+    border-radius: 25px;
+    padding: 45px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #312e81,
+            #6d28d9,
+            #0891b2
+        );
+
+    color: white;
+
+    display: grid;
+    grid-template-columns: 1fr 180px;
+    align-items: center;
+}
+
+.highlight h2 {
+    font-size: 31px;
+    margin-bottom: 12px;
+}
+
+.highlight p {
+    opacity: 0.9;
+}
+
+.highlight-icon {
+    text-align: center;
+    font-size: 100px;
+}
+
+
+/* ================= FUTURE FACT ================= */
+
+.future-fact {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+}
+
+.future-fact-icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.future-fact h2 {
+    margin-bottom: 10px;
+}
+
+.future-fact p {
+    color: var(--muted);
+    max-width: 750px;
+    margin: auto;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.about h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.about p {
+    color: var(--muted);
+}
+
+.about-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.about-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.about-item:last-child {
+    margin-bottom: 0;
+}
+
+.about-item-icon {
+    font-size: 30px;
+}
+
+
+/* ================= MODAL ================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(10, 7, 20, 0.78);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s;
+
+    z-index: 3000;
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-box {
+    background: var(--card);
+    width: 100%;
+    max-width: 760px;
+    max-height: 90vh;
+
+    border-radius: 22px;
+    overflow: hidden;
+
+    position: relative;
+
+    transform: scale(0.92);
+    transition: 0.3s;
+}
+
+.modal.show .modal-box {
+    transform: scale(1);
+}
+
+.modal-header {
+    height: 190px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4c1d95,
+            #7c3aed,
+            #0891b2
+        );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 90px;
+}
+
+.close {
+    position: absolute;
+    right: 17px;
+    top: 17px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(0,0,0,0.55);
+    color: white;
+
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.modal-content {
+    padding: 30px;
+    max-height: 55vh;
+    overflow-y: auto;
+}
+
+.modal-content .tag {
+    margin-bottom: 10px;
+}
+
+.modal-content h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    color: var(--text);
+    line-height: 1.8;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    margin-top: 50px;
+    background: #151127;
+    color: #bdb7cc;
+    padding: 45px 20px;
+}
+
+.footer-inner {
+    max-width: 1180px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-logo {
+    color: white;
+    font-size: 23px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+footer p {
+    font-size: 13px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .topic-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .article-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .nav-menu a {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 55px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .future-visual {
+        height: 270px;
+    }
+
+    .future-icon {
+        font-size: 80px;
+    }
+
+    .topic-list,
+    .article-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .highlight {
+        grid-template-columns: 1fr;
+        padding: 30px;
+    }
+
+    .highlight-icon {
+        display: none;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+    }
+
+    .modal-content {
+        padding: 22px;
+    }
+
+    .modal-content h2 {
+        font-size: 23px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+<nav>
+
+    <div class="logo">
+        Future<span>Lab</span>
+    </div>
+
+    <ul class="nav-menu">
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#topik">Topik</a></li>
+        <li><a href="#artikel">Artikel</a></li>
+        <li><a href="#masa-depan">Masa Depan</a></li>
+        <li><a href="#tentang">Tentang</a></li>
+    </ul>
+
+    <button class="theme-btn" onclick="toggleDark()" id="themeBtn">
+        🌙
+    </button>
+
+</nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="beranda">
+
+    <div>
+
+        <span class="badge">
+            🔮 SAINS • TEKNOLOGI • INOVASI
+        </span>
+
+        <h1>
+            Menjelajahi Masa Depan
+            Melalui <span>Ilmu & Teknologi</span>
+        </h1>
+
+        <p>
+            Kenali perkembangan ilmu pengetahuan dan teknologi
+            yang membentuk dunia hari ini serta membuka peluang
+            untuk kehidupan di masa depan.
+        </p>
+
+        <a href="#artikel" class="explore-btn">
+            Mulai Menjelajah →
+        </a>
+
+        <a href="#tentang" class="info-btn">
+            Tentang Website
+        </a>
+
+    </div>
+
+
+    <div class="future-visual">
+
+        <div class="future-icon">
+            🚀
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TOPIK ================= -->
+
+<section id="topik">
+
+    <div class="section-head">
+
+        <h2>
+            Jelajahi Dunia Pengetahuan
+        </h2>
+
+        <p>
+            Temukan berbagai topik yang berhubungan dengan masa depan.
+        </p>
+
+    </div>
+
+
+    <div class="topic-list">
+
+        <div class="topic" onclick="filterArticle('Sains')">
+
+            <div class="topic-icon">
+                🔬
+            </div>
+
+            <h3>
+                Sains
+            </h3>
+
+            <p>
+                Mengenal fenomena alam dan perkembangan ilmu pengetahuan.
+            </p>
+
+        </div>
+
+
+        <div class="topic" onclick="filterArticle('Teknologi')">
+
+            <div class="topic-icon">
+                💻
+            </div>
+
+            <h3>
+                Teknologi
+            </h3>
+
+            <p>
+                Memahami teknologi yang mengubah kehidupan manusia.
+            </p>
+
+        </div>
+
+
+        <div class="topic" onclick="filterArticle('AI')">
+
+            <div class="topic-icon">
+                🤖
+            </div>
+
+            <h3>
+                Artificial Intelligence
+            </h3>
+
+            <p>
+                Menjelajahi perkembangan kecerdasan buatan.
+            </p>
+
+        </div>
+
+
+        <div class="topic" onclick="filterArticle('Lingkungan')">
+
+            <div class="topic-icon">
+                🌎
+            </div>
+
+            <h3>
+                Masa Depan Bumi
+            </h3>
+
+            <p>
+                Inovasi untuk menjaga bumi dan lingkungan.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= HIGHLIGHT ================= -->
+
+<section>
+
+    <div class="highlight">
+
+        <div>
+
+            <h2>
+                Masa Depan Dimulai dari Pengetahuan Hari Ini
+            </h2>
+
+            <p>
+                Ilmu pengetahuan membantu manusia memahami dunia,
+                sedangkan teknologi membantu mengubah pengetahuan
+                tersebut menjadi solusi nyata.
+            </p>
+
+        </div>
+
+        <div class="highlight-icon">
+            🧠
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ARTIKEL ================= -->
+
+<section id="artikel">
+
+    <div class="section-head">
+
+        <h2>
+            Eksplorasi Artikel
+        </h2>
+
+        <p>
+            Baca berbagai informasi menarik mengenai sains dan teknologi.
+        </p>
+
+    </div>
+
+
+    <div class="search-area">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔎 Cari artikel..."
+            onkeyup="searchArticle()"
+        >
+
+    </div>
+
+
+    <div class="filters">
+
+        <button
+            class="active"
+            onclick="filterArticle('Semua')">
+            Semua
+        </button>
+
+        <button onclick="filterArticle('Sains')">
+            Sains
+        </button>
+
+        <button onclick="filterArticle('Teknologi')">
+            Teknologi
+        </button>
+
+        <button onclick="filterArticle('AI')">
+            AI
+        </button>
+
+        <button onclick="filterArticle('Lingkungan')">
+            Lingkungan
+        </button>
+
+    </div>
+
+
+    <div class="article-grid" id="articleGrid">
+
+
+        <!-- ARTIKEL 1 -->
+
+        <article class="article" data-category="AI">
+
+            <div class="article-top">
+                🤖
+            </div>
+
+            <div class="article-body">
+
+                <span class="tag">
+                    ARTIFICIAL INTELLIGENCE
+                </span>
+
+                <h3>
+                    AI dan Perubahan Cara Manusia Bekerja
+                </h3>
+
+                <p>
+                    Kecerdasan buatan mulai digunakan dalam berbagai
+                    aktivitas untuk membantu manusia mengolah informasi.
+                </p>
+
+                <button
+                    class="read"
+                    onclick="openArticle('AI')">
+                    Baca Selengkapnya →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- ARTIKEL 2 -->
+
+        <article class="article" data-category="Sains">
+
+            <div class="article-top">
+                🌌
+            </div>
+
+            <div class="article-body">
+
+                <span class="tag">
+                    ASTRONOMI
+                </span>
+
+                <h3>
+                    Misteri Alam Semesta yang Terus Dipelajari
+                </h3>
+
+                <p>
+                    Alam semesta memiliki banyak fenomena yang masih
+                    menjadi objek penelitian para ilmuwan.
+                </p>
+
+                <button
+                    class="read"
+                    onclick="openArticle('Alam Semesta')">
+                    Baca Selengkapnya →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- ARTIKEL 3 -->
+
+        <article class="article" data-category="Teknologi">
+
+            <div class="article-top">
+                📡
+            </div>
+
+            <div class="article-body">
+
+                <span class="tag">
+                    TEKNOLOGI
+                </span>
+
+                <h3>
+                    Bagaimana Internet Menghubungkan Dunia?
+                </h3>
+
+                <p>
+                    Internet membuat pertukaran informasi dapat dilakukan
+                    dengan cepat tanpa terbatas jarak.
+                </p>
+
+                <button
+                    class="read"
+                    onclick="openArticle('Internet')">
+                    Baca Selengkapnya →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- ARTIKEL 4 -->
+
+        <article class="article" data-category="Lingkungan">
+
+            <div class="article-top">
+                🌱
+            </div>
+
+            <div class="article-body">
+
+                <span class="tag">
+                    LINGKUNGAN
+                </span>
+
+                <h3>
+                    Teknologi Hijau untuk Masa Depan Bumi
+                </h3>
+
+                <p>
+                    Berbagai inovasi teknologi dikembangkan untuk
+                    membantu mengurangi dampak terhadap lingkungan.
+                </p>
+
+                <button
+                    class="read"
+                    onclick="openArticle('Teknologi Hijau')">
+                    Baca Selengkapnya →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- ARTIKEL 5 -->
+
+        <article class="article" data-category="Teknologi">
+
+            <div class="article-top">
+                ⚡
+            </div>
+
+            <div class="article-body">
+
+                <span class="tag">
+                    ENERGI
+                </span>
+
+                <h3>
+                    Energi Bersih dan Teknologi Masa Depan
+                </h3>
+
+                <p>
+                    Teknologi energi terus berkembang untuk menemukan
+                    sumber energi yang lebih berkelanjutan.
+                </p>
+
+                <button
+                    class="read"
+                    onclick="openArticle('Energi')">
+                    Baca Selengkapnya →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- ARTIKEL 6 -->
+
+        <article class="article" data-category="Sains">
+
+            <div class="article-top">
+                🧬
+            </div>
+
+            <div class="article-body">
+
+                <span class="tag">
+                    BIOTEKNOLOGI
+                </span>
+
+                <h3>
+                    Bioteknologi Membuka Peluang Baru
+                </h3>
+
+                <p>
+                    Ilmu biologi dan teknologi dapat digabungkan untuk
+                    menghasilkan berbagai inovasi.
+                </p>
+
+                <button
+                    class="read"
+                    onclick="openArticle('Bioteknologi')">
+                    Baca Selengkapnya →
+                </button>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MASA DEPAN ================= -->
+
+<section id="masa-depan">
+
+    <div class="section-head">
+
+        <h2>
+            Gambaran Masa Depan
+        </h2>
+
+        <p>
+            Teknologi yang saat ini berkembang dapat menjadi bagian
+            dari kehidupan manusia di masa mendatang.
+        </p>
+
+    </div>
+
+
+    <div class="future-fact">
+
+        <div class="future-fact-icon">
+            🔮
+        </div>
+
+        <h2>
+            Pengetahuan Membuka Kemungkinan Baru
+        </h2>
+
+        <p>
+            Perkembangan ilmu pengetahuan dan teknologi memungkinkan
+            manusia menciptakan solusi baru dalam berbagai bidang,
+            mulai dari kesehatan, pendidikan, transportasi, energi,
+            hingga lingkungan.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TENTANG ================= -->
+
+<section id="tentang">
+
+    <div class="about">
+
+        <div>
+
+            <h2>
+                Tentang FutureLab
+            </h2>
+
+            <p>
+                FutureLab merupakan website edukasi yang dirancang
+                untuk mengenalkan berbagai perkembangan ilmu
+                pengetahuan dan teknologi dengan cara yang sederhana.
+            </p>
+
+            <br>
+
+            <p>
+                Website ini mengajak pembaca untuk melihat bagaimana
+                ilmu dan teknologi dapat memengaruhi kehidupan sekarang
+                sekaligus membentuk kemungkinan di masa depan.
+            </p>
+
+        </div>
+
+
+        <div class="about-card">
+
+            <div class="about-item">
+
+                <div class="about-item-icon">
+                    🔬
+                </div>
+
+                <div>
+                    <strong>Ilmu Pengetahuan</strong>
+                    <p>
+                        Memahami berbagai fenomena dan penemuan ilmiah.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="about-item">
+
+                <div class="about-item-icon">
+                    🚀
+                </div>
+
+                <div>
+                    <strong>Inovasi Teknologi</strong>
+                    <p>
+                        Mengenal teknologi yang membawa perubahan.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="about-item">
+
+                <div class="about-item-icon">
+                    🌎
+                </div>
+
+                <div>
+                    <strong>Masa Depan Berkelanjutan</strong>
+                    <p>
+                        Mendorong pemanfaatan teknologi secara bijak.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MODAL ================= -->
+
+<div class="modal" id="articleModal">
+
+    <div class="modal-box">
+
+        <button
+            class="close"
+            onclick="closeArticle()">
+            ×
+        </button>
+
+        <div
+            class="modal-header"
+            id="modalImage">
+            📚
+        </div>
+
+        <div class="modal-content">
+
+            <span
+                class="tag"
+                id="modalCategory">
+                ARTIKEL
+            </span>
+
+            <h2 id="modalTitle">
+                Judul Artikel
+            </h2>
+
+            <p id="modalText">
+                Isi artikel.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div>
+
+            <div class="footer-logo">
+                FutureLab
+            </div>
+
+            <p>
+                Menjelajahi masa depan melalui ilmu & teknologi.
+            </p>
+
+        </div>
+
+        <div>
+
+            <p>
+                © 2026 FutureLab. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+/* ================= DARK MODE ================= */
+
+function toggleDark() {
+
+    document.body.classList.toggle("dark");
+
+    const btn = document.getElementById("themeBtn");
+
+    if (document.body.classList.contains("dark")) {
+        btn.innerHTML = "☀️";
+    } else {
+        btn.innerHTML = "🌙";
+    }
+
+}
+
+
+/* ================= DATA ARTIKEL ================= */
+
+const articles = {
+
+    "AI": {
+        category: "ARTIFICIAL INTELLIGENCE",
+        title: "AI dan Perubahan Cara Manusia Bekerja",
+        image: "🤖",
+        text: `
+            Kecerdasan buatan atau Artificial Intelligence merupakan
+            teknologi yang memungkinkan sistem komputer melakukan
+            berbagai tugas yang membutuhkan pemrosesan informasi.
+
+            <br><br>
+
+            AI telah digunakan dalam berbagai bidang, seperti pencarian
+            informasi, rekomendasi konten, penerjemahan bahasa,
+            pengolahan data, dan layanan digital.
+
+            <br><br>
+
+            Perkembangan AI dapat membantu manusia menyelesaikan pekerjaan
+            secara lebih cepat dan efisien. Namun, penggunaannya tetap
+            perlu memperhatikan keamanan data dan penggunaan teknologi
+            secara bertanggung jawab.
+        `
+    },
+
+
+    "Alam Semesta": {
+        category: "SAINS",
+        title: "Misteri Alam Semesta yang Terus Dipelajari",
+        image: "🌌",
+        text: `
+            Alam semesta memiliki berbagai objek seperti planet,
+            bintang, galaksi, dan fenomena kosmik lainnya.
+
+            <br><br>
+
+            Para ilmuwan terus melakukan penelitian untuk memahami
+            bagaimana alam semesta terbentuk dan bagaimana berbagai
+            objek di dalamnya berkembang.
+
+            <br><br>
+
+            Perkembangan teleskop dan teknologi luar angkasa membantu
+            manusia memperoleh informasi baru mengenai alam semesta.
+        `
+    },
+
+
+    "Internet": {
+        category: "TEKNOLOGI",
+        title: "Bagaimana Internet Menghubungkan Dunia?",
+        image: "📡",
+        text: `
+            Internet merupakan jaringan yang memungkinkan berbagai
+            perangkat saling bertukar informasi.
+
+            <br><br>
+
+            Kehadiran internet membuat komunikasi, pembelajaran,
+            perdagangan, dan pertukaran informasi dapat dilakukan
+            dengan lebih cepat.
+
+            <br><br>
+
+            Internet juga menjadi salah satu teknologi penting yang
+            mendukung perkembangan berbagai layanan digital modern.
+        `
+    },
+
+
+    "Teknologi Hijau": {
+        category: "LINGKUNGAN",
+        title: "Teknologi Hijau untuk Masa Depan Bumi",
+        image: "🌱",
+        text: `
+            Teknologi hijau merupakan berbagai inovasi yang dirancang
+            dengan mempertimbangkan dampaknya terhadap lingkungan.
+
+            <br><br>
+
+            Contohnya dapat berupa teknologi energi terbarukan,
+            kendaraan listrik, sistem pengelolaan sampah, dan berbagai
+            solusi untuk meningkatkan efisiensi penggunaan sumber daya.
+
+            <br><br>
+
+            Pengembangan teknologi hijau menjadi salah satu bagian dari
+            upaya menciptakan kehidupan yang lebih berkelanjutan.
+        `
+    },
+
+
+    "Energi": {
+        category: "ENERGI",
+        title: "Energi Bersih dan Teknologi Masa Depan",
+        image: "⚡",
+        text: `
+            Kebutuhan energi terus berkembang seiring dengan pertumbuhan
+            aktivitas manusia dan kemajuan teknologi.
+
+            <br><br>
+
+            Energi matahari, angin, air, dan panas bumi merupakan contoh
+            sumber energi yang dapat dimanfaatkan melalui teknologi
+            energi terbarukan.
+
+            <br><br>
+
+            Inovasi di bidang energi dapat membantu menciptakan sistem
+            energi yang lebih efisien dan berkelanjutan.
+        `
+    },
+
+
+    "Bioteknologi": {
+        category: "BIOTEKNOLOGI",
+        title: "Bioteknologi Membuka Peluang Baru",
+        image: "🧬",
+        text: `
+            Bioteknologi memanfaatkan organisme, sel, atau proses
+            biologis untuk menghasilkan produk dan teknologi yang
+            bermanfaat.
+
+            <br><br>
+
+            Penerapannya dapat ditemukan dalam bidang pangan,
+            pertanian, kesehatan, dan industri.
+
+            <br><br>
+
+            Perkembangan bioteknologi terus membuka peluang untuk
+            menghasilkan berbagai inovasi melalui pemanfaatan ilmu
+            biologi dan teknologi.
+        `
+    }
+
+};
+
+
+/* ================= OPEN ARTICLE ================= */
+
+function openArticle(id) {
+
+    const article = articles[id];
+
+    if (!article) {
+        return;
+    }
+
+    document.getElementById("modalImage").innerHTML =
+        article.image;
+
+    document.getElementById("modalCategory").innerHTML =
+        article.category;
+
+    document.getElementById("modalTitle").innerHTML =
+        article.title;
+
+    document.getElementById("modalText").innerHTML =
+        article.text;
+
+    document
+        .getElementById("articleModal")
+        .classList.add("show");
+
+    document.body.style.overflow = "hidden";
+}
+
+
+/* ================= CLOSE ARTICLE ================= */
+
+function closeArticle() {
+
+    document
+        .getElementById("articleModal")
+        .classList.remove("show");
+
+    document.body.style.overflow = "";
+}
+
+
+/* ================= CLOSE CLICK OUTSIDE ================= */
+
+document
+    .getElementById("articleModal")
+    .addEventListener("click", function(e) {
+
+        if (e.target === this) {
+            closeArticle();
+        }
+
+    });
+
+
+/* ================= ESC ================= */
+
+document.addEventListener("keydown", function(e) {
+
+    if (e.key === "Escape") {
+        closeArticle();
+    }
+
+});
+
+
+/* ================= FILTER ================= */
+
+function filterArticle(category) {
+
+    const cards =
+        document.querySelectorAll(".article");
+
+    const buttons =
+        document.querySelectorAll(".filters button");
+
+    buttons.forEach(button => {
+        button.classList.remove("active");
+    });
+
+
+    cards.forEach(card => {
+
+        if (
+            category === "Semua" ||
+            card.dataset.category === category
+        ) {
+            card.style.display = "";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+
+    buttons.forEach(button => {
+
+        if (
+            button.innerText.trim() === category
+        ) {
+            button.classList.add("active");
+        }
+
+    });
+
+
+    document
+        .getElementById("artikel")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+}
+
+
+/* ================= SEARCH ================= */
+
+function searchArticle() {
+
+    const keyword =
+        document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+    const cards =
+        document.querySelectorAll(".article");
+
+    cards.forEach(card => {
+
+        const content =
+            card.innerText.toLowerCase();
+
+        if (content.includes(keyword)) {
+            card.style.display = "";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>
